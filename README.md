@@ -39,4 +39,4 @@ Para executar o sistema, use os seguintes comandos:
 python conexao.py
 
 # Para iniciar o programa
-python tela.py
+python run_code.py
