@@ -1,4 +1,4 @@
-# Telas Com CustumeTkinter
+# Telas Com Customtkinter
 
 
 Mini projeto criado para a ETE Arcoverde - Prof. Francisco Jonas Feitosa 
