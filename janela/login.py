@@ -1,5 +1,6 @@
 import customtkinter
 from func_login import LogIn
+from center_window import MyWindow
 
 
 def login():
@@ -8,8 +9,8 @@ def login():
     customtkinter.set_appearance_mode("dark")
     customtkinter.set_default_color_theme("dark-blue")
 
-    janela_login = customtkinter.CTk()
-    janela_login.geometry("500x400")
+    janela_login = MyWindow()
+    janela_login.center_window(500, 400)
 
     texto = customtkinter.CTkLabel(janela_login, text="Hello,Friend!")
     texto.pack(padx=50, pady=50)

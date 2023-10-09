@@ -1,12 +1,13 @@
 import customtkinter
 from func_cadastro import CreateRegister
+from center_window import MyWindow
 
 
 def cadastro():
     from login import login
 
-    janela_cadastro = customtkinter.CTk()
-    janela_cadastro.geometry("500x400")
+    janela_cadastro = MyWindow()
+    janela_cadastro.center_window(500, 400)
 
     text = customtkinter.CTkLabel(janela_cadastro, text="Welcome Friend!")
     text.pack(padx=20, pady=20)
