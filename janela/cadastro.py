@@ -1,5 +1,5 @@
 import customtkinter
-from func_register import CreateRegister
+from func_cadastro import CreateRegister
 
 
 def cadastro():

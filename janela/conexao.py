@@ -1,7 +1,6 @@
 import sqlite3
 from sqlite3 import Error
 
-
 conn = sqlite3.connect("banco_de_dados.db")
 curso = conn.cursor()
 error = Error
