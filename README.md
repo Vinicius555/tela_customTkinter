@@ -29,6 +29,9 @@ Antes de executar o sistema, certifique-se de que você tenha os seguintes requi
 2. Instale a biblioteca customtkinter usando o seguinte comando:
    
    pip install customtkinter
+
+3. Instale a bibliotexa pillow usando o seguinte comando:
+    pip install pillow
    
 ## Executando o Sistema
 

@@ -1,27 +1,27 @@
 import customtkinter
 from func_login import LogIn
 from center_window import MyWindow
+from load_image import load_image
 
 
 def login():
     from welcome import welcome
-    from cadastro import cadastro
+    from register import cadastro
     customtkinter.set_appearance_mode("dark")
     customtkinter.set_default_color_theme("dark-blue")
 
     janela_login = MyWindow()
     janela_login.center_window(500, 400)
 
-    texto = customtkinter.CTkLabel(janela_login, text="Hello,Friend!")
-    texto.pack(padx=50, pady=50)
+    load_image(janela_login, "janela/img/login.jpg", (500, 400))
 
     email_entry = customtkinter.CTkEntry(
-        janela_login, placeholder_text="Email")
-    email_entry.pack(padx=10, pady=10)
+        janela_login, placeholder_text="Email", fg_color="transparent", corner_radius=2)
+    email_entry.place(x=190, y=150)
 
     password_entry = customtkinter.CTkEntry(
-        janela_login, placeholder_text="Passwod", show="*")
-    password_entry.pack(padx=10, pady=10)
+        janela_login, placeholder_text="Passwod", show="*", corner_radius=2, fg_color="transparent")
+    password_entry.place(x=190, y=190)
 
     def login():
         email = email_entry.get()
@@ -31,6 +31,7 @@ def login():
         )
         if not email or not password:
             error_label.configure(text="Por favor, preencha todos os campos.")
+            error_label.place(x=180, y=100)
             return
         if result:
             janela_login.destroy()
@@ -39,15 +40,16 @@ def login():
         else:
             error_label.configure(text=result)
 
-    login = customtkinter.CTkButton(janela_login, text="Enter", command=login)
-    login.pack(padx=10, pady=10)
+    login = customtkinter.CTkButton(
+        janela_login, text="Enter", command=login, corner_radius=2, fg_color="green")
+    login.place(x=190, y=240)
 
     def close_login():
         janela_login.destroy()
         cadastro()
     register = customtkinter.CTkButton(
-        janela_login, text="Register", command=close_login)
-    register.pack(padx=10, pady=10)
+        janela_login, text="Register", command=close_login, corner_radius=2)
+    register.place(x=190, y=280)
 
     error_label = customtkinter.CTkLabel(
         janela_login, text="", text_color="red")
