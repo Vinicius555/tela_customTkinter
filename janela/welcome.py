@@ -1,9 +1,9 @@
 import customtkinter
-
+from center_window import MyWindow
 
 def welcome():
     janela_welcome = customtkinter.CTk()
-
+    janela_welcome = MyWindow()
     janela_welcome.geometry("600x400")
 
     texto = customtkinter.CTkLabel(

@@ -10,7 +10,7 @@ def cadastro():
     janela_cadastro = MyWindow()
     janela_cadastro.center_window(500, 400)
 
-    load_image(janela_cadastro, "janela/img/register.jpg", (500, 400))
+    load_image(janela_cadastro, "img/register.jpg", (500, 400))
 
     name_entry = customtkinter.CTkEntry(
         janela_cadastro, placeholder_text="Name", corner_radius=2, fg_color="transparent")
@@ -60,6 +60,3 @@ def cadastro():
 
     janela_cadastro.resizable(False, False)
     janela_cadastro.mainloop()
-
-
-cadastro()

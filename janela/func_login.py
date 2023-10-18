@@ -1,5 +1,5 @@
-from conexao import conn, curso, error
-
+from conexao import curso, error
+import hashlib
 
 class Login():
     def __init__(self, email, password):
@@ -11,14 +11,24 @@ class LogIn:
     @staticmethod
     def login(email, password):
         try:
-            curso.execute(
-                f"SELECT * FROM usuarios WHERE email=? AND password=?", (email, password))
+            curso.execute("SELECT * FROM usuarios WHERE email=?", (email,))
             result = curso.fetchone()
+
             if result:
-                print("Login efetuado")
-                return True, None
+                stored_password = result[2]
+                sha256 = hashlib.sha256()
+                password_bytes = password.encode('utf-8')
+                sha256.update(password_bytes)
+                hashed_password = sha256.hexdigest()
+
+                if hashed_password == stored_password:
+                    print("Login efetuado")
+                    return True, None
+                else:
+                    print("Falha no login")
+                    return False, "Senha incorreta"
             else:
-                print("Fail")
-                return False, ("email inválido!")
+                print("Falha no login")
+                return False, "Email não encontrado"
         except error as er:
-            print(f"Falha ao realizar o login Error:{er}")
+            print(f"Falha ao realizar o login: {er}")
