@@ -72,3 +72,5 @@ def login():
 # Chame a função de login para iniciar o aplicativo
 if __name__ == "__main__":
     login()
+
+login()

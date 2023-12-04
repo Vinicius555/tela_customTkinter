@@ -11,7 +11,7 @@ class LogIn:
     @staticmethod
     def login(email, password):
         try:
-            curso.execute("SELECT * FROM usuarios WHERE email=?", (email,))
+            curso.execute("SELECT * FROM usuarios WHERE email=? AND password=?", (email,password))
             result = curso.fetchone()
 
             if result:
